@@ -47,6 +47,7 @@ public class SolidityController {
 
         balanceRepository.save((BalanceEntity) t);
 
+        SignatureService.generateSignature(t);
         return ResponseEntity.ok(t.getJson());
     }
     
